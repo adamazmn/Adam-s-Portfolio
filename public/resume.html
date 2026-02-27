@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Resume | Adam Azman</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <style>
+        body {
+            background-color: #000000;
+            color: #ffffff;
+            font-family: 'Courier New', Courier, monospace;
+            margin: 0;
+            padding: 40px;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        .keyword {
+            font-weight: bold;
+        }
+
+        .comment {
+            color: #999999;
+        }
+
+        a {
+            color: #ffffff;
+            text-decoration: underline;
+        }
+
+        a:hover {
+            text-decoration: none;
+        }
+
+        @media print {
+            body {
+                background-color: #ffffff;
+                color: #000000;
+            }
+
+            .comment {
+                color: #555555;
+            }
+
+            a {
+                color: #000000;
+                text-decoration: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <pre>
+<span class="comment">; ========================================================================
+; NAME:         ADAM_AZMAN
+; ROLE:         SOFTWARE_DEVELOPER
+; REG_LOC:      SELANGOR_MALAYSIA
+; SYS_REQ:      FULL_STACK_ENG
+;
+; EMAIL:        <a href="mailto:adamazman193@gmail.com">adamazman193@gmail.com</a>
+; GITHUB:       <a href="https://github.com/adamazmn" target="_blank">github.com/adamazmn</a>
+; LINKEDIN:     <a href="https://linkedin.com/in/adamazman16" target="_blank">linkedin.com/in/adamazman16</a>
+; ========================================================================</span>
+
+<span class="keyword">section</span> .data
+    name            db 'Adam Azman', 0
+    title           db 'Software Developer', 0
+    status          db 'Available', 0
+
+<span class="keyword">section</span> .summary
+<span class="comment">    ; Information Systems Engineering student at UiTM with 
+    ; CGPA 3.72/4.00 (6 consecutive Dean List).
+    ; Currently working as Software Developer Trainee at HeiTech Padu.
+    ; Highly passionate about robust full-stack systems and clean design.</span>
+
+<span class="keyword">section</span> .text
+<span class="keyword">global</span> _experience
+
+_experience:
+<span class="comment">    ; ---> HeiTech Padu Berhad (Cyberjaya)
+    ; Role: Software Developer Trainee
+    ; Date: Mar 2025 - Present</span>
+    
+    <span class="keyword">call</span> BUILD_BACKEND
+<span class="comment">    ; Developed RESTful APIs for IDM services via Spring Boot.
+    ; Result: Microservices architecture increased scalability by 80%.</span>
+    
+    <span class="keyword">call</span> BUILD_FRONTEND
+<span class="comment">    ; Optimized frontend workflows using Angular.
+    ; Result: Improved UI responsiveness and usability by 80%.</span>
+
+    <span class="keyword">call</span> SYS_ANALYSIS
+<span class="comment">    ; Conducted gap analysis and created System Design Specifications.
+    ; Result: Boosted module efficiency and reduced gaps by 70%.</span>
+
+    <span class="keyword">ret</span>
+
+<span class="keyword">section</span> .education
+    university      db 'Universiti Teknologi MARA (UiTM)', 0
+    degree          db 'BSc Information Systems Engineering (Hons.)', 0
+    duration        db 'Oct 2022 - Mar 2026', 0
+
+<span class="keyword">section</span> .skills
+    <span class="keyword">mov</span> eax, [java_springboot]
+    <span class="keyword">mov</span> ebx, [angular_typescript]
+    <span class="keyword">mov</span> ecx, [html_css_js]
+    <span class="keyword">mov</span> edx, [postgresql_oracle]
+    
+    <span class="keyword">push</span> rest_apis
+    <span class="keyword">push</span> system_analysis
+    <span class="keyword">push</span> manual_testing
+    <span class="keyword">push</span> git_version_control
+
+<span class="keyword">section</span> .certifications
+<span class="comment">    ; 0x01: Certified Tester Foundation Level (CTFL) - MSTB
+    ; 0x02: AWS Certified Cloud Practitioner - AWS
+    ; 0x03: Google UX Design Professional - Coursera
+    ; 0x04: Certified Professional Requirements Eng. - MSTB</span>
+
+<span class="keyword">sys_exit</span>:
+    <span class="keyword">mov</span> eax, 1    <span class="comment">; sys_exit system call</span>
+    <span class="keyword">int</span> 0x80      <span class="comment">; execute</span>
+</pre>
+</body>
+
+</html>

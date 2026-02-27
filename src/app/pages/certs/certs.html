@@ -1,0 +1,64 @@
+<section class="section visible">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag">Certifications</span>
+            <h2 class="section-title">Professional <span class="gradient-text">Credentials</span></h2>
+        </div>
+        <div class="certs-grid">
+            @for (cert of certifications; track cert.name) {
+            <div class="cert-card" [style.--cert-color]="cert.color" (click)="openCertModal(cert)">
+                <h3 class="cert-name">{{ cert.name }}</h3>
+                <div class="cert-issuer">{{ cert.issuer }}</div>
+                <div class="cert-date">{{ cert.date }}</div>
+                <div class="cert-view-label">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                        <circle cx="12" cy="12" r="3" />
+                    </svg>
+                    View Certificate
+                </div>
+                <div class="cert-glow"
+                    [style.background]="'radial-gradient(circle at 50% 100%, ' + cert.color + '12, transparent 60%)'">
+                </div>
+            </div>
+            }
+        </div>
+    </div>
+</section>
+
+<!-- Spotify Section -->
+<section class="section visible">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag">Vibes</span>
+            <h2 class="section-title">My <span class="gradient-text">Playlist</span></h2>
+            <p class="section-subtitle">What I listen to while coding ✨</p>
+        </div>
+        <div class="spotify-embed">
+            <iframe style="border-radius: 12px"
+                src="https://open.spotify.com/embed/playlist/37i9dQZF1DXcBWIGoYBM5M?utm_source=generator&theme=0"
+                width="100%" height="352" frameBorder="0" allowfullscreen=""
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
+            </iframe>
+        </div>
+    </div>
+</section>
+
+<!-- Certificate Modal -->
+@if (certModalImage()) {
+<div class="cert-modal-overlay" (click)="closeCertModal()">
+    <div class="cert-modal" (click)="$event.stopPropagation()">
+        <div class="cert-modal-header">
+            <h3 class="cert-modal-title">{{ certModalName() }}</h3>
+            <button class="cert-modal-close" (click)="closeCertModal()" aria-label="Close modal">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 6L6 18M6 6l12 12" />
+                </svg>
+            </button>
+        </div>
+        <div class="cert-modal-body">
+            <img [src]="certModalImage()" [alt]="certModalName()" class="cert-modal-img" />
+        </div>
+    </div>
+</div>
+}

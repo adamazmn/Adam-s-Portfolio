@@ -1,0 +1,56 @@
+<section class="section visible">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag">Projects</span>
+            <h2 class="section-title">Featured <span class="gradient-text">Work</span></h2>
+        </div>
+        <div class="projects-grid">
+            @for (project of projects; track project.name; let i = $index) {
+            <div class="project-card" [style.--accent]="project.color">
+                <div class="project-icon"
+                    [style.background]="'color-mix(in srgb, ' + project.color + ' 12%, transparent)'"
+                    [style.color]="project.color">
+                    @switch (project.icon) {
+                    @case ('task') {
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="4 17 10 11 4 5"></polyline>
+                        <line x1="12" y1="19" x2="20" y2="19"></line>
+                    </svg>
+                    }
+                    @case ('shield') {
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path
+                            d="M2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2C6.48 2 2 6.48 2 12Z" />
+                        <path d="M12 8A4 4 0 1 0 12 16A4 4 0 1 0 12 8Z" stroke-dasharray="2 2" />
+                        <path d="M8 12h8m-4-4v8" />
+                    </svg>
+                    }
+                    @case ('briefcase') {
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <path d="M2 12h20"></path>
+                        <path
+                            d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
+                        </path>
+                    </svg>
+                    }
+                    }
+                </div>
+                <h3 class="project-name">{{ project.name }}</h3>
+                <p class="project-desc">{{ project.description }}</p>
+                <div class="project-tags">
+                    @for (tag of project.tags; track tag) {
+                    <span class="project-tag">{{ tag }}</span>
+                    }
+                </div>
+                <div class="project-glow"
+                    [style.background]="'radial-gradient(circle at 50% 0%, color-mix(in srgb, ' + project.color + ' 10%, transparent), transparent 60%)'">
+                </div>
+            </div>
+            }
+        </div>
+    </div>
+</section>
