@@ -1548,13 +1548,16 @@
         left: 0;
         right: 0;
         bottom: 0;
+        width: 100vw;
+        height: 100vh;
         background: rgba(10, 10, 15, 0.98);
         backdrop-filter: blur(20px);
         flex-direction: column;
         align-items: center;
         justify-content: center;
         gap: 16px;
-        z-index: 999;
+        z-index: 9999;
+        overflow-y: auto;
     }
 
     .nav-links.mobile-open {
@@ -1563,7 +1566,7 @@
 
     .mobile-toggle {
         display: block;
-        z-index: 1001;
+        z-index: 10000;
     }
 
     .footer-content {
