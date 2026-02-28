@@ -7,16 +7,20 @@
         <div class="certs-grid">
             @for (cert of certifications; track cert.name) {
             <div class="cert-card" [style.--cert-color]="cert.color" (click)="openCertModal(cert)">
+                <div class="cert-preview-img">
+                    <img [src]="cert.image" [alt]="cert.name" loading="lazy" />
+                    <div class="cert-view-overlay">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                            <circle cx="12" cy="12" r="3" />
+                        </svg>
+                        <span>Preview</span>
+                    </div>
+                </div>
                 <h3 class="cert-name">{{ cert.name }}</h3>
                 <div class="cert-issuer">{{ cert.issuer }}</div>
                 <div class="cert-date">{{ cert.date }}</div>
-                <div class="cert-view-label">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
-                        <circle cx="12" cy="12" r="3" />
-                    </svg>
-                    View Certificate
-                </div>
                 <div class="cert-glow"
                     [style.background]="'radial-gradient(circle at 50% 100%, ' + cert.color + '12, transparent 60%)'">
                 </div>

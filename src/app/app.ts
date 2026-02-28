@@ -24,7 +24,7 @@ export class App implements OnInit, OnDestroy, AfterViewInit {
 
   isNavScrolled = signal(false);
   mobileMenuOpen = signal(false);
-  isLightMode = signal(false);
+  isDarkMode = signal(false);
   currentYear = new Date().getFullYear();
 
   private particles: Particle[] = [];
@@ -65,15 +65,15 @@ export class App implements OnInit, OnDestroy, AfterViewInit {
     resize();
     window.addEventListener('resize', resize);
 
-    for (let i = 0; i < 60; i++) {
+    for (let i = 0; i < 50; i++) {
       this.particles.push({
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
-        vx: (Math.random() - 0.5) * 0.4,
-        vy: (Math.random() - 0.5) * 0.4,
-        size: Math.random() * 2.5 + 0.5,
-        opacity: Math.random() * 0.4 + 0.1,
-        hue: Math.random() * 60 + 250,
+        vx: (Math.random() - 0.5) * 0.3,
+        vy: (Math.random() - 0.5) * 0.3,
+        size: Math.random() * 2 + 0.5,
+        opacity: Math.random() * 0.25 + 0.05,
+        hue: Math.random() * 40 + 30,
       });
     }
 
@@ -86,7 +86,7 @@ export class App implements OnInit, OnDestroy, AfterViewInit {
         if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-        ctx.fillStyle = `hsla(${p.hue}, 70%, 65%, ${p.opacity})`;
+        ctx.fillStyle = `hsla(${p.hue}, 80%, 55%, ${p.opacity})`;
         ctx.fill();
       });
       // Draw connections
@@ -99,7 +99,7 @@ export class App implements OnInit, OnDestroy, AfterViewInit {
             ctx.beginPath();
             ctx.moveTo(this.particles[i].x, this.particles[i].y);
             ctx.lineTo(this.particles[j].x, this.particles[j].y);
-            ctx.strokeStyle = `hsla(270, 60%, 60%, ${0.06 * (1 - dist / 150)})`;
+            ctx.strokeStyle = `hsla(40, 80%, 50%, ${0.04 * (1 - dist / 150)})`;
             ctx.lineWidth = 0.5;
             ctx.stroke();
           }
@@ -127,11 +127,11 @@ export class App implements OnInit, OnDestroy, AfterViewInit {
   }
 
   toggleTheme() {
-    this.isLightMode.update(v => !v);
-    if (this.isLightMode()) {
-      document.documentElement.classList.add('light-mode');
+    this.isDarkMode.update(v => !v);
+    if (this.isDarkMode()) {
+      document.documentElement.classList.add('dark-mode');
     } else {
-      document.documentElement.classList.remove('light-mode');
+      document.documentElement.classList.remove('dark-mode');
     }
   }
 }

@@ -7,6 +7,9 @@
         @for (exp of experiences; track exp.company) {
         <div class="experience-card">
             <div class="exp-header">
+                @if (exp.logo) {
+                <img [src]="exp.logo" [alt]="exp.company + ' Logo'" class="exp-logo" />
+                }
                 <div class="exp-info">
                     <h3 class="exp-role">{{ exp.role }}</h3>
                     <div class="exp-company">{{ exp.company }}</div>

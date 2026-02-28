@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&family=Outfit:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&family=Outfit:wght@300;400;500;600;700;800;900&family=Kalam:wght@400;700&display=swap');
 
 *,
 *::before,
@@ -9,31 +9,32 @@
 }
 
 :root {
-    --bg-primary: #0a0a0f;
-    --bg-secondary: #12121a;
-    --bg-card: #16161f;
-    --bg-card-hover: #1c1c28;
-    --bg-glass: rgba(22, 22, 31, 0.7);
-    --bg-nav: rgba(10, 10, 15, 0.85);
-    --text-primary: #f0f0f5;
-    --text-secondary: #a0a0b8;
-    --text-muted: #6b6b80;
-    --accent-1: #7c3aed;
-    --accent-2: #a855f7;
-    --accent-3: #c084fc;
-    --accent-rgb: 168, 85, 247;
-    --accent-rgb-dark: 124, 58, 237;
-    --accent-gradient: linear-gradient(135deg, #7c3aed, #a855f7, #c084fc);
-    --accent-gradient-h: linear-gradient(90deg, #7c3aed, #a855f7, #c084fc);
+    /* ── Light / Clean Palette ── */
+    --bg-primary: #ffffff;
+    --bg-secondary: #f8f9fa;
+    --bg-card: #ffffff;
+    --bg-card-hover: #f9fafb;
+    --bg-glass: rgba(255, 255, 255, 0.85);
+    --bg-nav: rgba(255, 255, 255, 0.92);
+    --text-primary: #1a1a2e;
+    --text-secondary: #555770;
+    --text-muted: #8e8ea0;
+    --accent-1: #f5a623;
+    --accent-2: #f7b733;
+    --accent-3: #e09415;
+    --accent-rgb: 245, 166, 35;
+    --accent-rgb-dark: 224, 148, 21;
+    --accent-gradient: linear-gradient(135deg, #f5a623, #f7b733, #fcc63d);
+    --accent-gradient-h: linear-gradient(90deg, #f5a623, #f7b733, #fcc63d);
     --blue-accent: #3b82f6;
     --cyan-accent: #06b6d4;
     --green-accent: #10b981;
     --amber-accent: #f59e0b;
     --rose-accent: #f43f5e;
-    --border-color: rgba(124, 58, 237, 0.15);
-    --border-subtle: rgba(255, 255, 255, 0.06);
-    --glow-purple: 0 0 30px rgba(124, 58, 237, 0.15);
-    --glow-strong: 0 0 60px rgba(124, 58, 237, 0.2);
+    --border-color: rgba(245, 166, 35, 0.2);
+    --border-subtle: rgba(0, 0, 0, 0.06);
+    --glow-accent: 0 0 30px rgba(245, 166, 35, 0.1);
+    --glow-strong: 0 0 60px rgba(245, 166, 35, 0.15);
     --radius-sm: 8px;
     --radius-md: 12px;
     --radius-lg: 16px;
@@ -41,6 +42,51 @@
     --transition-fast: 0.15s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-med: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-slow: 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+
+    --badge-angular-bg: rgba(221, 0, 49, 0.08);
+    --badge-angular-color: #dd0031;
+    --badge-spring-bg: rgba(104, 160, 99, 0.08);
+    --badge-spring-color: #5a9e54;
+    --badge-aws-bg: rgba(245, 158, 11, 0.08);
+    --badge-aws-color: #d48806;
+    --badge-java-bg: rgba(59, 130, 246, 0.08);
+    --badge-java-color: #2563eb;
+    --badge-postgresql-bg: rgba(14, 165, 233, 0.08);
+    --badge-postgresql-color: #0284c7;
+
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.06);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.06), 0 2px 4px rgba(0, 0, 0, 0.04);
+    --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.08), 0 4px 12px rgba(0, 0, 0, 0.04);
+    --shadow-xl: 0 20px 60px rgba(0, 0, 0, 0.1), 0 8px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* ── Dark Mode ── */
+:root.dark-mode {
+    --bg-primary: #0c0c14;
+    --bg-secondary: #14141e;
+    --bg-card: #18182a;
+    --bg-card-hover: #1e1e32;
+    --bg-glass: rgba(20, 20, 30, 0.85);
+    --bg-nav: rgba(12, 12, 20, 0.92);
+    --text-primary: #f0f0f5;
+    --text-secondary: #a0a0b8;
+    --text-muted: #6b6b80;
+    --accent-1: #f5a623;
+    --accent-2: #f7b733;
+    --accent-3: #fcc63d;
+    --accent-rgb: 245, 166, 35;
+    --accent-rgb-dark: 245, 166, 35;
+    --accent-gradient: linear-gradient(135deg, #f5a623, #f7b733, #fcc63d);
+    --accent-gradient-h: linear-gradient(90deg, #f5a623, #f7b733, #fcc63d);
+    --border-color: rgba(245, 166, 35, 0.2);
+    --border-subtle: rgba(255, 255, 255, 0.06);
+    --glow-accent: 0 0 30px rgba(245, 166, 35, 0.15);
+    --glow-strong: 0 0 60px rgba(245, 166, 35, 0.2);
+
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.2);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.3);
+    --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.4);
+    --shadow-xl: 0 20px 60px rgba(0, 0, 0, 0.5);
 
     --badge-angular-bg: rgba(221, 0, 49, 0.15);
     --badge-angular-color: #ff4f6e;
@@ -52,40 +98,6 @@
     --badge-java-color: #60a5fa;
     --badge-postgresql-bg: rgba(14, 165, 233, 0.15);
     --badge-postgresql-color: #38bdf8;
-}
-
-:root.light-mode {
-    --bg-primary: linear-gradient(135deg, #eaddbf 0%, #d8c7ab 45%, #c1ac8b 100%);
-    --bg-secondary: #c1ac8b;
-    --bg-card: rgba(255, 255, 255, 0.4);
-    --bg-card-hover: rgba(255, 255, 255, 0.65);
-    --bg-glass: rgba(216, 199, 171, 0.6);
-    --bg-nav: rgba(234, 221, 191, 0.85);
-    --text-primary: #382c1b;
-    --text-secondary: #5a4b36;
-    --text-muted: #79664c;
-    --accent-1: #4a3828;
-    --accent-2: #5a4632;
-    --accent-3: #705942;
-    --accent-rgb: 90, 70, 50;
-    --accent-rgb-dark: 90, 70, 50;
-    --accent-gradient: linear-gradient(135deg, #4a3828, #5a4632, #705942);
-    --accent-gradient-h: linear-gradient(90deg, #4a3828, #5a4632, #705942);
-    --border-color: rgba(90, 70, 50, 0.3);
-    --border-subtle: rgba(0, 0, 0, 0.08);
-    --glow-purple: 0 0 20px rgba(90, 70, 50, 0.15);
-    --glow-strong: 0 0 40px rgba(90, 70, 50, 0.2);
-
-    --badge-angular-bg: rgba(221, 0, 49, 0.15);
-    --badge-angular-color: #c4002b;
-    --badge-spring-bg: rgba(104, 160, 99, 0.15);
-    --badge-spring-color: #3b6b35;
-    --badge-aws-bg: rgba(245, 158, 11, 0.2);
-    --badge-aws-color: #b57404;
-    --badge-java-bg: rgba(59, 130, 246, 0.15);
-    --badge-java-color: #1d4ed8;
-    --badge-postgresql-bg: rgba(14, 165, 233, 0.15);
-    --badge-postgresql-color: #0369a1;
 }
 
 html {
@@ -132,7 +144,7 @@ a {
 }
 
 a:hover {
-    color: var(--accent-2);
+    color: var(--accent-1);
 }
 
 img {

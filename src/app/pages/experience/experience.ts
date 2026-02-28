@@ -10,6 +10,7 @@ export class ExperiencePage {
   experiences = [
     {
       company: 'HeiTech Padu Berhad',
+      logo: 'comp1.png',
       role: 'Software Developer Trainee',
       period: 'Mar 2025 – Present',
       location: 'Cyberjaya, Selangor',
