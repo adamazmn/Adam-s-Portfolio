@@ -14,10 +14,11 @@ export class ProjectsPage {
       tags: ['Angular', 'Spring Boot', 'PostgreSQL', 'JWT', 'Supabase', 'Vercel', 'Render', 'Resend'],
       icon: 'task',
       color: '#10b981',
-      link: '#',
+      link: 'https://www.taskmanagersystem.online/',
+      image: 'MYDAILY.png'
     },
     {
-      name: 'NIISe - Identity Management Module',
+      name: 'National Integrated Immigration System (NIISe) - Identity Management Module',
       description: 'Contributed to the IDM Module (Release 1) for the Immigration Department of Malaysia. Implemented biometric verification (fingerprint & facial recognition), officer registration workflows, and access control.',
       tags: ['Angular 19', 'Spring Boot', 'Oracle', 'MinIO', 'Draw.io', 'Figma', 'Kafka', 'DBeaver'],
       icon: 'shield',
