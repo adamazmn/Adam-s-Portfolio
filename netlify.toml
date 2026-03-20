@@ -1,3 +1,11 @@
 [build]
   command = "npm run build"
   publish = "dist/xp-portfolio/browser"
+
+# Angular uses history-based routing (e.g. /projects). When you visit those URLs
+# directly, Netlify needs to serve index.html so the Angular router can handle it.
+[[redirects]]
+from = "/*"
+to = "/index.html"
+status = 200
+force = false
